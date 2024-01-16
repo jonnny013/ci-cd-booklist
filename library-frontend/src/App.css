@@ -1,7 +1,18 @@
-body, html {
+:root {
+  --primary-color: #f4f4f4; /* Light Gray */
+  --accent-color: #66b2ff; /* Soft Blue */
+  --highlight-color: #ffd700; /* Gold/Yellow */
+  --text-color: #333333; /* Dark Gray */
+  --secondary-accent: #ffa07a; /* Light Salmon */
+}
+
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 #root {
@@ -19,5 +30,3 @@ body, html {
 .content {
   flex: 1;
 }
-
-
