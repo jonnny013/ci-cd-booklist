@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { ApolloServer } = require('@apollo/server')
 const { expressMiddleware } = require('@apollo/server/express4')
 const {
@@ -23,7 +24,6 @@ const resolvers = require('./resolvers')
 require('dotenv').config()
 
 const MONGODB_URI = process.env.MONGODB_URI
-
 console.log('connecting to', MONGODB_URI)
 
 mongoose
@@ -76,7 +76,6 @@ const start = async () => {
   }
 
   app.get('/health', (req, res) => {
-    // eslint-disable-next-line no-console
     console.log('Health check request received')
     res.send('ok')
   })

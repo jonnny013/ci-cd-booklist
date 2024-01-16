@@ -4,7 +4,6 @@ import { render, screen } from '@testing-library/react'
 import App from '../library-frontend/src/App'
 
 test('renders content', () => {
-  
   render(<App />)
 
   const elementLogin = screen.getByText('Login')

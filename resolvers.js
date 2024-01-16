@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 const { GraphQLError } = require('graphql')
 const jwt = require('jsonwebtoken')
 const Author = require('./models/author')
@@ -23,14 +24,14 @@ const resolvers = {
         )
       }
       if (args.hasOwnProperty('genre')) {
-        filteredBooks = filteredBooks.filter(book =>
-          book.genres.includes(args.genre)
-        )
+        filteredBooks = filteredBooks.filter(book => book.genres.includes(args.genre))
       }
       return filteredBooks
     },
+    // eslint-disable-next-line no-unused-vars
     allAuthors: async (root, args) => {
-      return Author.find({}).populate('books')},
+      return Author.find({}).populate('books')
+    },
     me: (root, args, { currentUser }) => {
       return currentUser
     },
@@ -58,15 +59,13 @@ const resolvers = {
       }
       if (!author) {
         if (args.author.length < 3) {
-          throw new GraphQLError(
-            "Author's name should be at least 3 characters",
-            {
-              extensions: {
-                code: 'BAD_USER_INPUT',
-                invalidArgs: args.author,
-              },
-            }
-          )
+          // eslint-disable-next-line quotes
+          throw new GraphQLError("Author's name should be at least 3 characters", {
+            extensions: {
+              code: 'BAD_USER_INPUT',
+              invalidArgs: args.author,
+            },
+          })
         }
         const newAuthor = new Author({ name: args.author })
         await newAuthor.save()
@@ -81,6 +80,7 @@ const resolvers = {
         author.books = author.books.concat(book._id)
         await author.save()
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error('error', error)
         throw new GraphQLError(`Please check all categories: ${error}`, {
           extensions: {
@@ -127,7 +127,7 @@ const resolvers = {
 
     createUser: async (root, args) => {
       const { username, favoriteGenre, password } = args
-      if (password.length < 6 ){
+      if (password.length < 6) {
         throw new Error('Password must be 6 characters or more')
       }
       const saltRounds = 10
@@ -135,7 +135,7 @@ const resolvers = {
       const user = new User({
         username,
         favoriteGenre,
-        passwordHash
+        passwordHash,
       })
       return user.save().catch(error => {
         throw new GraphQLError('Creating a new user failed', {
@@ -150,7 +150,8 @@ const resolvers = {
 
     login: async (root, args) => {
       const user = await User.findOne({ username: args.username })
-      const passwordCheck = user === null ? false : await bcrypt.compare(args.password, user.passwordHash)
+      const passwordCheck =
+        user === null ? false : await bcrypt.compare(args.password, user.passwordHash)
       if (!(user && passwordCheck)) {
         throw new GraphQLError('wrong credentials', {
           extensions: {
@@ -169,9 +170,9 @@ const resolvers = {
   },
   Subscription: {
     bookAdded: {
-      subscribe: () => pubsub.asyncIterator('BOOK_ADDED')
-    }
-  }
+      subscribe: () => pubsub.asyncIterator('BOOK_ADDED'),
+    },
+  },
 }
 
 module.exports = resolvers
