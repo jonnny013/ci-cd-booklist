@@ -36,25 +36,6 @@ jobs:
         run: flyctl deploy --remote-only
         env:
             FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-      
-      - name: Test info
-        uses: rjstone/discord-webhook-notify@v1.0.4
-        if: ${{ github.event_name == 'push' && success() }}
-        with:
-            severity: info
-            color: '#9cbb80'
-            details: Done. "Do or do not. There is no try." - Yoda
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-            username: jonnny013
-      - name: Test Failure
-        uses: rjstone/discord-webhook-notify@v1.0.4
-        if: ${{ github.event_name == 'push' && failure() }}
-        env:
-          COMMIT_URL: ${{ toJson(github.event.commits.*.url) }}
-        with:
-            severity: error
-            details: The greatest teacher, failure is. - Yoda. Commit = $COMMIT_URL
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
             
   tag_release:
     needs: [simple_deployment_pipeline]
