@@ -7,7 +7,7 @@ const { makeExecutableSchema } = require('@graphql-tools/schema')
 const express = require('express')
 const cors = require('cors')
 const http = require('http')
-const {createProxyMiddleware} = require('http-proxy-middleware');
+const { createProxyMiddleware } = require('http-proxy-middleware')
 const { WebSocketServer } = require('ws')
 const { useServer } = require('graphql-ws/lib/use/ws')
 
@@ -19,7 +19,6 @@ const jwt = require('jsonwebtoken')
 
 const typeDefs = require('./schema')
 const resolvers = require('./resolvers')
-
 
 require('dotenv').config()
 
@@ -36,8 +35,7 @@ mongoose
     console.log('error connection to MongoDB:', error.message)
   })
 
-  // mongoose.set('debug', true)
-
+// mongoose.set('debug', true)
 
 const start = async () => {
   const app = express()
@@ -74,8 +72,14 @@ const start = async () => {
         target: 'http://localhost:5173', // Vite development server URL
         changeOrigin: true,
       })
-    );
+    )
   }
+
+  app.get('/health', (req, res) => {
+    // eslint-disable-next-line no-console
+    console.log('Health check request received')
+    res.send('ok')
+  })
 
   await server.start()
 
@@ -88,10 +92,7 @@ const start = async () => {
       context: async ({ req }) => {
         const auth = req ? req.headers.authorization : null
         if (auth && auth.startsWith('Bearer ')) {
-          const decodedToken = jwt.verify(
-            auth.substring(7),
-            process.env.JWT_SECRET
-          )
+          const decodedToken = jwt.verify(auth.substring(7), process.env.JWT_SECRET)
           const currentUser = await User.findById(decodedToken.id)
           return { currentUser }
         }

@@ -6,7 +6,15 @@
 app = "jonlovesbookapp"
 primary_region = "hkg"
 
+[deploy]
+  release_command = "npm run build"
+
+[processes]
+  app = "node index.js"
+
 [build]
+  [build.args]
+    NODE_VERSION = "20.11.0"
 
 [env]
   PORT = "3000" 
@@ -18,3 +26,32 @@ primary_region = "hkg"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/health"
+
+[[services]]
+  internal_port = 8080
+  processes = ["app"]
+
+[[services.ports]]
+  handlers = ["http"]
+  port = 80
+
+ # [[services.tcp_checks]]
+  #  grace_period = "1s"
+   # interval = "15s"
+   # restart_limit = 0
+   # timeout = "2s"
+
+[[services.script_checks]]
+  command       = "./health_check.sh"
+  grace_period  = "1s"
+  interval      = "5s"
+  restart_limit = 0
+  timeout       = "1s"
+

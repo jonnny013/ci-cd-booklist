@@ -1,2 +1,4 @@
 node_modules
 .env
+library-frontend/node_modules
+library-frontend/dist
