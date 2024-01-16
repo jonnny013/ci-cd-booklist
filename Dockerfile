@@ -1,8 +1,10 @@
 # syntax = docker/dockerfile:1
 
 # Adjust NODE_VERSION as desired
-ARG NODE_VERSION=18.16.0
+ARG NODE_VERSION=20.11.0
 FROM node:${NODE_VERSION}-slim as base
+
+RUN apt-get update; apt install -y curl
 
 LABEL fly_launch_runtime="Node.js"
 
@@ -27,6 +29,11 @@ RUN npm ci
 # Copy application code
 COPY --link . .
 
+# Build application
+RUN npm run build
+
+# Remove development dependencies
+RUN npm prune --omit=dev
 
 # Final stage for app image
 FROM base

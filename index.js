@@ -24,7 +24,7 @@ const resolvers = require('./resolvers')
 require('dotenv').config()
 
 const MONGODB_URI = process.env.MONGODB_URI
-console.log('connecting to', MONGODB_URI)
+console.log('connecting to mongoDBs URI')
 
 mongoose
   .connect(MONGODB_URI)

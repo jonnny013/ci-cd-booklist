@@ -1,2 +1,4 @@
 /node_modules
 .env
+.git
+library-frontend/node_modules

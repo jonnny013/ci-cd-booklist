@@ -2,7 +2,7 @@
 
 echo "Hello from shell script"
 
-response=$(curl -s https://jonlovesbookapp.fly.dev/health)
+response=$(curl -s -H "Content-Type: application/json" https://jonlovesbookapp.fly.dev/health)
 
 if [ "$response" == "ok" ]; then
     echo "Health check successful: $response"
