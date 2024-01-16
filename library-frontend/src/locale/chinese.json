@@ -1,0 +1,70 @@
+{
+  "logoutNotification": "下次見～",
+  "languageButton": "English",
+  "nav-Authors": "作家",
+  "nav-Books": "書籍",
+  "nav-Add-Books": "新增書籍",
+  "nav-Login": "登入",
+  "nav-Recom": "為您推薦的",
+  "nav-Logout": "登出",
+
+  "notification-new-book-added": "新增成功了",
+
+  "notification-birthYear": "出生年更新",
+  "notification-author-not-found": "找不到人物",
+
+  "author-birthyear-title": "設定出生年",
+  "author-option-1": "選擇作者",
+  "author-birthyear-form-title": "出生年",
+  "author-form-placeholder-1": "輸入年份",
+  "author-update-button": "更新",
+
+  "authors-title": "作者",
+  "authors-loading": "載入中...",
+  "authors-table-header-name": "姓名",
+  "authors-table-header-born": "出生年",
+  "authors-table-header-books": "書籍",
+
+  "books-title": "書籍",
+  "books-loading": "載入中...",
+  "books-showing-genre": "顯示類別：",
+  "books-table-header-name": "書名",
+  "books-table-header-author": "作者",
+  "books-table-header-published": "出版年",
+  "books-all-genres": "所有類別",
+
+  "footer-portfolio": "我的作品集",
+  "footer-source-code": "原始碼",
+
+  "notification-welcomeMessage": "歡迎",
+  "login-enterUsername": "輸入使用者名稱",
+  "login-enterPassword": "密碼",
+  "login-loginButton": "登入",
+  "login-newUserButton": "新用戶",
+
+  "notification-bookCreated": "書籍已創建",
+  "book-title-label": "書名",
+  "book-title-placeholder": "輸入書名",
+  "book-author-label": "作者",
+  "book-author-placeholder": "輸入作者",
+  "book-published-label": "出版年份",
+  "book-published-placeholder": "輸入年份",
+  "book-genre-label": "類型",
+  "book-genre-placeholder": "輸入類型",
+  "book-addGenre-button": "新增類型",
+  "book-genres-label": "類型",
+  "book-createButton": "創建書籍",
+
+  "notification-userCreated": "用戶已創建",
+  "newUser-username-label": "使用者名稱",
+  "newUser-username-placeholder": "輸入使用者名稱",
+  "newUser-password-label": "密碼",
+  "newUser-password-placeholder": "密碼",
+  "newUser-favoriteGenre-label": "喜愛類型",
+  "newUser-favoriteGenre-placeholder": "輸入喜愛類型",
+  "newUser-createUser-button": "創建用戶",
+  "newUser-login-button": "取消",
+
+  "recommendations-title": "為您推薦",
+  "recommendations-showingGenre": "顯示您喜愛的類型:"
+}

@@ -1,0 +1,70 @@
+{
+  "logoutNotification": "See you next time!",
+  "languageButton": "中文",
+  "nav-Authors": "Authors",
+  "nav-Books": "Books",
+  "nav-Add-Books": "Add book",
+  "nav-Login": "Login",
+  "nav-Recom": "Recommendations",
+  "nav-Logout": "Logout",
+
+  "notification-new-book-added": "added",
+
+  "notification-birthYear": "Birth year updated",
+  "notification-author-not-found": "Person not found",
+
+  "author-birthyear-title": "Set Birth Year",
+  "author-option-1": "Choose an author",
+  "author-birthyear-form-title": "Birth Year",
+  "author-form-placeholder-1": "Enter year",
+  "author-update-button": "Update",
+
+  "authors-title": "Authors",
+  "authors-loading": "Loading...",
+  "authors-table-header-name": "Name",
+  "authors-table-header-born": "Born",
+  "authors-table-header-books": "Books",
+
+  "books-title": "Books",
+  "books-loading": "Loading...",
+  "books-showing-genre": "Showing genre:",
+  "books-table-header-name": "Book Name",
+  "books-table-header-author": "Author",
+  "books-table-header-published": "Published",
+  "books-all-genres": "All genres",
+
+  "footer-portfolio": "My Portfolio",
+  "footer-source-code": "Source Code",
+
+  "notification-welcomeMessage": "Welcome",
+  "login-enterUsername": "Enter username",
+  "login-enterPassword": "Password",
+  "login-loginButton": "Login",
+  "login-newUserButton": "New User",
+
+  "notification-bookCreated": "Book created",
+  "book-title-label": "Book Title",
+  "book-title-placeholder": "Enter title",
+  "book-author-label": "Author",
+  "book-author-placeholder": "Enter author",
+  "book-published-label": "Year Published",
+  "book-published-placeholder": "Enter year",
+  "book-genre-label": "Genre(s)",
+  "book-genre-placeholder": "Enter genres",
+  "book-addGenre-button": "Add genre",
+  "book-genres-label": "Genres",
+  "book-createButton": "Create book",
+
+  "notification-userCreated": "User created",
+  "newUser-username-label": "Username",
+  "newUser-username-placeholder": "Enter username",
+  "newUser-password-label": "Password",
+  "newUser-password-placeholder": "Password",
+  "newUser-favoriteGenre-label": "Favorite Genre",
+  "newUser-favoriteGenre-placeholder": "Enter favorite genre",
+  "newUser-createUser-button": "Create User",
+  "newUser-login-button": "Cancel",
+
+  "recommendations-title": "Recommended for you",
+  "recommendations-showingGenre": "Showing your favorite genre:"
+}

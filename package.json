@@ -1,0 +1,39 @@
+{
+  "name": "books_authors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "build:ui": "rm -rf dist && cd ../library-frontend/ && npm run build && cp -r dist ../books_authors",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy"
+  },
+  "author": "Jon Love",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "@graphql-tools/schema": "^10.0.2",
+    "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-http-proxy": "^2.0.0",
+    "graphql": "^16.8.1",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-ws": "^5.14.2",
+    "http-proxy-middleware": "^2.0.6",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.5",
+    "mongoose-unique-validator": "^4.0.0",
+    "uuid": "^9.0.1",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.11",
+    "nodemon": "^3.0.1"
+  }
+}
